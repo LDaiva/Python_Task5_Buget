@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p> All entries </p>
+{% for entry in entries_all %}
+    <p>Person: {{ entry.user.name }}</p>
+    {% if entry.income %}
+        <p>Income: {{ entry.sum }}</p>
+    {% else %}
+        <p>Expense: {{ entry.sum }}</p>
+    {% endif %}
+    <p>Date: {{ entry.date }}</p>
+    <p>-----------------------------------</p>
+
+{% endfor %}
+
+{% endblock content %}

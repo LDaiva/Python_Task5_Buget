@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <p>Name: {{ current_user.name }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    <form action="" method="POST">
+        {{ prof_form.csrf_token }}
+        {{ prof_form.name.label }}: {{ prof_form.name }}
+        {{ prof_form.email.label }}: {{ prof_form.email }}
+        {{ prof_form.submit }}
+    </form>
+
+{% endblock content %}
